@@ -22,11 +22,13 @@ app.use(routes);
 var db = require("./models");
 var PORT = process.env.PORT || 5000;
 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/fashionArticles";
 
+mongoose.connect(MONGODB_URI);
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/fashionArticles", {
-    useNewUrlParser: true
-});
+// mongoose.connect("mongodb://localhost/fashionArticles", {
+//     useNewUrlParser: true
+// });
 
 
 // Start the server
